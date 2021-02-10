@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>AJAX</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+  <style>
+    body {
+      font-size: 18px;
+    }
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+    .container {
+      display: flex;
+      flex-flow: row nowrap;
+      max-width: 1140px;
+      margin: 15px auto;
+    }
+    .item {
+      flex: 1 1 0;
+      padding: 20px;
+    }
+    .user {
+      padding: 5px;
+    }
+    .user-name {
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .user-name:hover {
+      color: brown;
+    }
+    .inp-field {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 15px;
+      margin-bottom: 10px;
+    }
+    .confirm {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div id="list" class="item">
+      <ul class="user-list">
+      </ul>
+    </div>
+    <form id="display" class="item"></form>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

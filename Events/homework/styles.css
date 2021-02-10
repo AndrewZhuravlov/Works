@@ -1,0 +1,107 @@
+/* START: Task 1 Styles */
+table {
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    margin: 0 auto;
+    width: 200px;
+    width: 200px;
+}
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+.green {
+    background-color: green;
+}
+/* END: Task 1 Styles */
+
+/* START: Task 2 Styles */
+.phone-form {
+    width: 600px;
+    margin: 70px auto;
+}
+.title-form {
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    height: 100px;
+    border: 1px black solid;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.inp-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+}
+.inp-btn {
+    width: 100%;
+    max-width: 50px;
+    margin-left: 22px;
+    padding: 10px 0;
+}
+
+/* END: Task 2 Styles */
+
+/* START: Task 3 Styles */
+.field-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: url('./assets/court.png') no-repeat center;
+    width: 600px;
+    height: 300px;
+    margin: 70px auto;
+    background-size: cover;
+    z-index: 2;
+}
+
+.ball {
+    position: absolute;
+    z-index: 100;
+    width: 40px;
+    height: 40px;
+    transition: all .5s;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: 0px auto;
+}
+.basket1 { 
+    position: absolute;
+    right: 33px;
+    width: 15px;
+    height: 15px;
+}
+
+.basket2 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 33px;
+}
+.goal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: orange;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+/* END: Task 3 Styles */

@@ -1,0 +1,300 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    background-color: $main-bg-c;
+    line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+}
+$position-lib: ("rel": relative, "abs": absolute);
+
+@mixin buttons ($bg-color) {
+    display: inline-block;
+    width: 143px;
+    height: 50px;
+    padding: 4px 0px 1px 0px;
+    font-weight: bolder;
+    font-size: 17px;
+    font-family: $sans-pro;
+    background-color: $bg-color;
+    color: #fff;
+    border: none;
+    border-radius: 5px;  
+}
+
+@mixin sec-link {
+    .section_link{
+        font-size: 16px;
+        color: rgba($color: #fff, $alpha: .7);
+        display: block;
+        padding: 25px 0 45px 0;
+        text-align: center;
+    } 
+}
+
+@mixin links ($color, $family, $size, $weight) {
+    color: $color;
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin mark($width, $height, $top, $left) {
+    &::before {
+        content: '';
+        min-width: $width;
+        min-height: $height;
+        position: map-get($map: $position-lib, $key: abs);
+        top: $top;
+        left: $left;
+        display: block;
+        background-color: $mark-color;
+        z-index: -1;
+    }
+}
+
+%heading-text-c {
+    color: $heading-color;
+  }
+
+.footer {
+    background-color: $places-footer-bg-c;
+}
+
+.header {
+    background: $bg-header-img;
+    background-size: 100%;
+    background-position: 0 -107px;
+    border-bottom-right-radius: 40%;
+
+    .header-wrap {
+        margin: 0px 100px;
+
+        .landing-logo {
+            display: flex;
+            padding-top: 20px;
+        
+            img {
+                width: 45px;
+                height: 45px;
+            }
+
+            p {
+            @extend %heading-text-c;
+            display: flex;
+            flex-direction: column;
+            padding: 3px 0px 0px 14px;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Hind', sans-serif;
+        
+                span {
+                    font-size: 10px;
+                    text-align: center;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}
+
+.header_heading {
+    @extend %heading-text-c;
+    position: map-get($map: $position-lib, $key: rel);
+    width: 65%;
+    padding: 73px 115px 0px 1px;
+    font-size: 72px;
+    font-weight: bold;
+    z-index: 5;
+
+    @include mark(300px, 50px, 165px, 0)  
+}
+
+.header_text {
+    @extend %heading-text-c;
+    width: 65%;
+    white-space: pre-line;
+    padding: 35px 110px 0 0;
+    margin-bottom: 75px;
+    font-family: 'Hind', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.header_button {
+    @include buttons($btn-color);
+    margin-bottom: 173px;
+}
+
+.login {
+    margin-left: 149px;
+    @include links(white, $sans-pro, 20px, normal);
+}
+
+.section_text {
+    @extend %heading-text-c;
+    position: map-get($map: $position-lib, $key: rel);
+    padding: 45px 192px 20px 192px;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 600;
+
+    @include mark(191px, 55px, 33px, 796px)   
+}
+
+.section_card_wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+
+    .section_card {
+        display: flex;
+        border-radius: 5px;
+        background-color: $places-footer-bg-c;
+        margin-bottom: 25px; 
+    }
+   
+    .section_card_img {
+        width: 100%;
+            border-radius: 25px;
+            padding: 20px;
+        }
+        
+    .section_card_right_container {
+
+        .section_card_heading{
+            padding: 70px 0px 50px 0px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px
+        }
+
+        .section_card_text {
+            padding: 0 100px 0 80px;
+            color: rgba($color: #fff, $alpha: .7);
+            line-height: 1.4;
+            font-family: $place-description-text;
+            font-size: 16px;
+        }
+
+        @include sec-link();
+    }    
+}
+
+.section_banner {
+    position: map-get($map: $position-lib, $key: rel);
+    top: 78px;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 70px auto 0 auto;
+    border-radius: 5px;
+    background: linear-gradient( to right, $from-grad-c, $to-grad-c);
+    z-index: 3;
+
+    .section_banner_text_wrap {
+        display: inline-block;
+        margin: 0 320px 0 160px;
+
+        .section_banner_heading {
+            @extend %heading-text-c;
+            position: map-get($map: $position-lib, $key: rel);
+            padding: 33px 0px;
+            font-weight: bold;
+            font-size: 30px;
+
+            @include mark(67px, 50px, 15px, 117px);
+        }
+
+        .section_banner_text {
+            margin-bottom: 45px;
+            color: rgba($color: #fff, $alpha: .7);
+            font-family: $place-description-text;   
+        }
+    }
+
+    .section_banner_button {
+        @include buttons($btn-color);
+    }
+}
+
+footer {
+
+    .footer-wrap {
+        display: flex;
+        align-items: center;
+        padding: 164px 0 35px 100px;
+    }
+
+    .footer_logo.landing-logo {
+
+        p {
+            color: rgba($color: #fff, $alpha: .7);
+
+            span {
+                display: block;
+                font-size: 10px;
+                text-align: center;}
+            }
+        }
+        
+    .footer_text { 
+        display: block;
+        max-width: 300px;
+        margin: 0 420px 0 484px;
+        color: rgba($color: #fff, $alpha: .7);
+        font-family: $place-description-text;
+        font-size: 14px;
+        line-height: 1.3;
+}
+    .footer-cr {
+        color: rgba($color: #fff, $alpha: .7);
+        font-family: $place-description-text;
+        font-size: 14px;
+        line-height: 1.3;
+    }
+}

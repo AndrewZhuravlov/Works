@@ -1,0 +1,91 @@
+.folder {
+    color: #F8D775;
+}
+
+.file {
+    color: grey;
+}
+
+.my-ul {
+    list-style: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.folder-wrap, .file-wrap {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.material-icons {
+    font-size: 30px;
+    vertical-align: bottom;
+}
+
+.container {
+    width: 900px;
+    margin: 50px auto;
+    border: 1px solid grey;
+    box-shadow: 10px 10px 10px;
+    user-select: none;
+}
+
+.d-none {
+    display: none;
+}
+
+.its-empty {
+    font-style: italic;
+}
+
+.d-inline {
+    display: inline-block;
+}
+
+.context {
+    display: block;
+    background-color: white;
+    padding: 10px 0px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 30px lightgrey;
+    position: absolute;
+    transform-origin: center;
+    z-index: 2;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.context.show {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: top left;
+}
+  
+.menu-item {
+    display: block;
+    padding: 10px 30px;
+    transition: 0.1s;
+    color: #666;
+}
+  
+.menu-item:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.out {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+input {
+    font-size: 16px;
+}

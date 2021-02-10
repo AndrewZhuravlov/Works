@@ -1,0 +1,164 @@
+
+:root {
+    --second-but-hover-color: #24d4d4;
+    --but-hover-color: rgb(118, 205, 216);
+    --main-bg-color: #24d4d4;
+    --but-head-foot-color: #019999;
+    --my-transition: all linear  0.3s;
+    --text-color: #76cdd8;
+}
+
+.tm-bg-color-primary {
+    background-color: var(--main-bg-color);
+}
+
+.tm-bg-color-secondary {
+    background-color: var(--but-head-foot-color);
+}
+
+.tm-col-md-reverse {
+    flex-direction: row-reverse;
+}
+
+.tm-text-color-primary{
+    color: var( --text-color);
+}
+
+.tm-quote { 
+    padding: 1.2rem 0rem;
+}
+
+.tm-mb-30 {
+    margin-bottom: 1.8rem;
+}
+
+.tm-md-flex-center>q {
+    font-size: 1.1rem;
+}
+
+.btn {
+    background-color: var(--but-head-foot-color);
+    border: none;
+}
+
+.btn:hover{
+    background-color: var( --but-hover-color);
+}
+
+.btn-secondary {
+    border: 1px solid black ;
+}
+
+.btn-secondary:hover {
+    background-color: var(--second-but-hover-color);
+}
+
+.tm-form-header {
+    background-color: var(--main-bg-color);
+}
+
+.tm-pricing-table {
+    border: 1px solid var(--but-head-foot-color)
+}
+
+.tm-form-header, 
+.tm-form-footer {
+    z-index: 1;
+    margin-top: -3.4375rem;
+}
+
+.tm-form-header {
+    top: 3.43rem;
+}
+
+.tm-contact-form {
+    z-index: 5;
+}
+
+.tm-card:hover {
+    color: var( --text-color);
+    transition: var(--my-transition);
+}
+
+[class $="tm-card"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 6rem solid var(--main-bg-color);
+    border-left: 6rem solid transparent;
+    opacity: 0;
+    transition: var(--my-transition);
+}
+
+[class $="tm-card"]:hover::after{
+    opacity: 1;
+}
+
+.tm-col-md-reverse::before {
+    content: '';
+    position: absolute;
+     top: 0;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 6rem solid var(--main-bg-color);
+    border-right: 6rem solid transparent;
+    opacity: 1;
+    z-index: 10;
+    opacity: 0;
+    transition: var(--my-transition); 
+}
+
+.tm-col-md-reverse:hover::before {
+    opacity: 1;
+}
+
+.img-fluid:hover {
+    transition: var(--my-transition);
+    transform: scale(1.1);
+}
+
+.tm-pricing-table {
+    border: 1px solid var( --text-color);
+    margin: 1.5rem 0;
+}
+
+.tm-pricing-table:hover {
+    box-shadow: 0 0 0 0.2rem var( --second-but-hover-color);
+    margin: 0;
+}
+
+.tm-pricing-discount {
+    padding: 0;
+    margin: 0;
+} 
+
+.tm-pricing-discount__star {
+    color: red;
+}
+
+.tm-pricing-discount__text {
+    color: var( --second-but-hover-color);
+}
+
+.tm-pricing-table:hover  .tm-pricing-discount{
+    display: block;
+    z-index: 6;
+}
+
+.form-control:focus {
+    border-color: var( --second-but-hover-color);
+    box-shadow: 0 0 0 0.2rem var( --second-but-hover-color); 
+}
+
+select:focus {
+    border-color:  var( --second-but-hover-color);
+    box-shadow: 0 0 0 0.2rem var( --second-but-hover-color); 
+}
+
